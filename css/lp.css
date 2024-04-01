@@ -1,0 +1,275 @@
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('../font/SourceSansPro-Regular.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1f1f1f;
+}
+
+header img {
+    width: 100%;
+}
+
+header nav {
+    display: none;
+}
+
+main {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main .container_l {
+    width: 100%;
+    height: 45vh;
+    background: url('../img/bg-mobile-lp.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+main .container_r {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: radial-gradient(circle, rgba(4, 37, 83, 1) 0%, rgba(4, 45, 120, 1) 48%, rgba(3, 34, 68, 1) 99%);
+    color: #FFF;
+}
+
+main .container_r .cfyou {
+    width: 70%;
+    margin: 1.5rem 0;
+}
+
+main .container_r .titles {
+    text-align: center;
+    padding: 0 .5rem;
+}
+
+main .container_r .titles .title1 {
+    font-weight: 300;
+    color: #d7d7d7;
+}
+
+main .container_r .form_register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 2rem;
+    padding: 0 2rem;
+}
+
+main .container_r .form_register .input_group_tel {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+}
+
+main .container_r .form_register .input_group_tel select {
+    width: 30%;
+}
+
+main .container_r .form_register .input_group_tel input {
+    width: 70%;
+}
+
+main .container_r .form_register .input_style {
+    color: #000;
+    width: 100%;
+    height: 4vh;
+    border: 2px solid #FFFFFF;
+    border-radius: 5px;
+    padding-left: .5rem;
+    margin-top: 2rem;
+    font-size: 1rem;
+}
+
+main .container_r .form_register .caixa-check[type="checkbox"]:before {
+    background-color: #170054;
+    border: 4px solid #fff;
+}
+
+main .container_r .form_register .container_checkbox {
+    display: flex;
+    width: 100%;
+    color: #FFFFFF;
+    padding-top: 1.5rem;
+}
+
+main .container_r .form_register .container_checkbox label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0 0 0 1rem;
+} 
+
+main .container_r .form_register .container_checkbox label a {
+    color: #FFFFFF;
+    text-decoration: underline;
+    cursor: pointer;
+} 
+
+/* BOTAO CADASTRO */
+main .container_r .form_register .enviar_form_aceite {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+main .container_r .form_register .botao_cadastro {
+    cursor: pointer;
+    width: 100%;
+    background-color: #ECE83B;
+    border: none;
+    border-radius: 7px;
+    padding: 1rem 2.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #3E3F42;
+}
+
+footer {
+    background: #262626;
+    padding: 2rem 1rem;
+    width: 100%;
+}
+
+footer .social-media-mobile {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+footer .social-media-mobile .img_social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .social-media-mobile .img_social a {
+    display: block;
+}
+
+footer .social-media-mobile .img_social a img {
+    width: 60%;
+}
+
+footer .footer-items-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+footer .footer-items-mobile a {
+    text-align: center;
+    font-weight: 550;
+    letter-spacing: .2rem;
+    font-size: 1.1rem;
+    margin: 0 0 1rem 0;
+    color: white;
+    text-decoration: none;
+}
+
+footer .legal-text-mobile {
+    color: #bbbbbb;
+    margin-top: 2rem;
+}
+
+@media(min-width: 764px) {
+    header nav {
+        display: block;
+        width: 30%;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        list-style: none;
+    }
+
+    header nav ul li a {
+        font-size: 1.2rem;
+        color: #FFF;
+        text-decoration: none;
+        letter-spacing: .1rem;
+    }
+
+    header nav ul li a:hover {
+        color: #c8c8c8
+    }
+
+    main {
+        width: 100vw;
+        flex-direction: row;
+    }
+
+    main .container_l {
+        width: 65%;
+        height: 90vh;
+        transform: scale(1.1);
+        z-index: -1;
+        background: url('../img/bg-desktop-lp.jpg') no-repeat 50% 30%;
+        background-size: cover;
+    }
+
+    main .container_r {
+        width: 40%;
+        z-index: 2;
+        height: 90vh;
+        justify-content: start;
+    }
+
+    main .container_r .cfyou {
+        width: 50%;
+        margin: .5rem 0;
+    }
+
+    main .container_r .titles {
+        font-size: 1.2rem
+    }
+
+    main .container_r .form_register {
+        padding: 0 5rem;
+    }
+    
+    main .container_r .form_register .input_style {
+        height: 5vh;
+    }
+
+    footer .legal-text-mobile {
+        padding: 0 20%;
+    }
+
+}
