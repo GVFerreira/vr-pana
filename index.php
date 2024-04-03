@@ -17,109 +17,150 @@
             <a-assets>
                 <img id="skyTexture" src="img/bg-main.webp">
                 <img id="logotipo" src="img/logo-desafio.png">
+                <img id="vrazor" src="img/v-razor.png">
             </a-assets>
 
             <a-entity id="home" visible="true" postion="0 0 0">
-                <a-plane id="logoPlane" src="#logotipo" position="0 2 -5" opacity="0.99" width="5.8" height="3.3"></a-plane>
+                <a-plane id="logoPlane" src="#logotipo" position="0 2 -7" opacity="0.99" width="5.8" height="3.3"></a-plane>
 
-                <a-entity geometry="primitive: plane; width: 2; height: 0.5; depth: 0.1" material="color: #FFF" position="0 -1 -5" cursor-listener onclick="goToValidation()">
+                <a-entity geometry="primitive: plane; width: 2; height: 0.5" material="color: #FFF" position="0 -1 -7" cursor-listener onclick="goToValidation()">
                     <a-text value="JOGAR" align="center" position="0 0 0" color="#000"></a-text>
                 </a-entity>
             </a-entity>
 
             <a-entity id="validation" position="1000 0 0">
-                <a-text value="Valide seu cadastro" align="center" position="0 4.5 -5" scale="2 2 2" color="#FFF"></a-text>
-                <a-text value="Digite apenas numeros" align="center" position="0 4 -5" color="#FFF"></a-text>
+                <a-text value="Valide seu cadastro" align="center" position="0 4.5 -7" scale="2 2 2" color="#FFF"></a-text>
+                <a-text value="Digite apenas numeros" align="center" position="0 4 -7" color="#FFF"></a-text>
+
+                <a-entity geometry="primitive: plane; width: 5; height: 0.5" material="color: #F00" position="0 -1000 -2" id="msgerrorbox">
+                    <a-text value="" id="msgerror" align="center" position="0 0 0" color="#FFF"></a-text>
+                </a-entity>
 
                 <!-- Texto digitado -->
-                <a-entity geometry="primitive: plane; width: 4; height: 0.5; depth: 0.1" material="color: #FFF" position="0 3.5 -5">
+                <a-entity geometry="primitive: plane; width: 4; height: 0.5;" material="color: #FFF" position="0 3.5 -7">
                     <a-text id="typedText" position="0 0 0"  color="#000" align="center"></a-text>
                 </a-entity>
 
                 <!-- Number Pad -->
-                <a-entity id="keyboard" position="0 -0.5 -5">
+                <a-entity id="keyboard" position="0 -0.5 -7">
                     <!-- Linha 1 -->
-                    <a-entity class="row" position="0 3 0" material="color: transparent">
-                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5; depth: 0.1" material="color: #FFF" position="-1 0 0" onclick="handleKeyClick(this)">
+                    <a-entity class="row" position="0 3 0">
+                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5;" material="color: #FFF" position="-1 0 0" onclick="handleKeyClick(this)">
                             <a-text class="key" value="1" align="center" position="0 0 0" color="#000"></a-text>
                         </a-entity>
-                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5; depth: 0.1" material="color: #FFF" position="0 0 0" onclick="handleKeyClick(this)">
+                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5;" material="color: #FFF" position="0 0 0" onclick="handleKeyClick(this)">
                             <a-text class="key" value="2" align="center" position="0 0 0" color="#000"></a-text>
                         </a-entity>
-                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5; depth: 0.1" material="color: #FFF" position="1 0 0" onclick="handleKeyClick(this)">
+                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5;" material="color: #FFF" position="1 0 0" onclick="handleKeyClick(this)">
                             <a-text class="key" value="3" align="center" position="0 0 0" color="#000""></a-text>
                         </a-entity>
                     </a-entity>
                     <!-- Linha 2 -->
-                    <a-entity class="row" position="0 2 0" material="color: transparent">
-                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5; depth: 0.1" material="color: #FFF" position="-1 0 0" onclick="handleKeyClick(this)">
+                    <a-entity class="row" position="0 2 0">
+                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5;" material="color: #FFF" position="-1 0 0" onclick="handleKeyClick(this)">
                             <a-text class="key" value="4" align="center" position="0 0 0" color="#000"></a-text>
                         </a-entity>
-                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5; depth: 0.1" material="color: #FFF" position="0 0 0" onclick="handleKeyClick(this)">
+                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5;" material="color: #FFF" position="0 0 0" onclick="handleKeyClick(this)">
                             <a-text class="key" value="5" align="center" position="0 0 0" color="#000"></a-text>
                         </a-entity>
-                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5; depth: 0.1" material="color: #FFF" position="1 0 0" onclick="handleKeyClick(this)">
+                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5;" material="color: #FFF" position="1 0 0" onclick="handleKeyClick(this)">
                             <a-text class="key" value="6" align="center" position="0 0 0" color="#000""></a-text>
                         </a-entity>
                     </a-entity>
                     <!-- Linha 3 -->
-                    <a-entity class="row" position="0 1 0" material="color: transparent">
-                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5; depth: 0.1" material="color: #FFF" position="-1 0 0" onclick="handleKeyClick(this)">
+                    <a-entity class="row" position="0 1 0">
+                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5;" material="color: #FFF" position="-1 0 0" onclick="handleKeyClick(this)">
                             <a-text class="key" value="7" align="center" position="0 0 0" color="#000"></a-text>
                         </a-entity>
-                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5; depth: 0.1" material="color: #FFF" position="0 0 0" onclick="handleKeyClick(this)">
+                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5;" material="color: #FFF" position="0 0 0" onclick="handleKeyClick(this)">
                             <a-text class="key" value="8" align="center" position="0 0 0" color="#000"></a-text>
                         </a-entity>
-                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5; depth: 0.1" material="color: #FFF" position="1 0 0" onclick="handleKeyClick(this)">
+                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5;" material="color: #FFF" position="1 0 0" onclick="handleKeyClick(this)">
                             <a-text class="key" value="9" align="center" position="0 0 0" color="#000""></a-text>
                         </a-entity>
                     </a-entity>
                     <!-- Linha 4 -->
-                    <a-entity class="row" position="0 0 0" material="color: transparent">
-                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5; depth: 0.1" material="color: #FFF" position="-1 0 0" onclick="handleKeyClick(this)">
+                    <a-entity class="row" position="0 0 0">
+                        <a-entity geometry="primitive: plane; width: 0.9; height: 0.5;" material="color: #FFF" position="-1 0 0" onclick="handleKeyClick(this)">
                             <a-text class="key" value="LIMPAR" align="center" position="0 0 0" color="#000"></a-text>
                         </a-entity>
-                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5; depth: 0.1" material="color: #FFF" position="0 0 0" onclick="handleKeyClick(this)">
+                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5;" material="color: #FFF" position="0 0 0" onclick="handleKeyClick(this)">
                             <a-text class="key" value="0" align="center" position="0 0 0" color="#000"></a-text>
                         </a-entity>
-                        <a-entity geometry="primitive: plane; width: 0.8; height: 0.5; depth: 0.1" material="color: #FFF" position="1 0 0" onclick="handleKeyClick(this)">
+                        <a-entity geometry="primitive: plane; width: 0.9; height: 0.5;" material="color: #FFF" position="1 0 0" onclick="handleKeyClick(this)">
                             <a-text class="key" value="APAGAR" align="center" position="0 0 0" color="#000""></a-text>
                         </a-entity>
                     </a-entity>
                 </a-entity>
 
-                <a-entity geometry="primitive: plane; width: 2; height: 0.5; depth: 0.1" material="color: #FFF" position="0 -1.5 -5" cursor-listener onclick="goToRules()">
+                <a-entity geometry="primitive: plane; width: 2; height: 0.5;" material="color: #FFF" position="0 -1.5 -7" cursor-listener onclick="goToRules()">
                     <a-text value="VALIDAR" align="center" position="0 0 0" color="#000"></a-text>
                 </a-entity>
             </a-entity>
 
             <a-entity id="rules" position="2000 0 0">
-                <a-entity geometry="primitive: plane; width: 2; height: 0.5; depth: 0.1" material="color: #FFF" position="0 -1 -5" onclick="goToGame()">
+                <a-entity geometry="primitive: plane; width: 2; height: 0.5;" material="color: #FFF" position="0 -1 -7" onclick="goToGame()">
                     <a-text value="VAMOS LA!" align="center" position="0 0 0" color="#000"></a-text>
                 </a-entity>
             </a-entity>
 
             <a-entity id="game" position="3000 0 0">
+                <a-entity geometry="primitive: plane; width: 2; height: 0.5;" material="color: #000" position="0 5.5 -7">
+                    <a-text id="tempo" value="0.000" align="center" position="0 0 0" color="#FFF"></a-text>
+                    <a-text id="countdown" position="-0.1 -3.9 4" color="#FFF"></a-text>
+                </a-entity>
+
                 <a-entity id="cursor" cursor="fuse: false;"></a-entity>
                 <a-entity laser-controls="hand: right" raycaster="objects: .clickable"></a-entity>
                 <a-entity laser-controls="hand: left" raycaster="objects: .clickable"></a-entity>
-                <a-entity geometry="primitive: plane; width: 2; height: 0.5; depth: 0.1" material="color: #FFF" position="0 5 -5">
-                    <a-text id="tempo" value="0.000" align="center" position="0 0 0" color="#000"></a-text>
+            </a-entity>
+
+            <a-entity id="gameover" position="4000 0 0">
+                <a-text position="0 2.5 -2.5" value="Fim de jogo..." color="#FFF" align="center"></a-text>
+                <a-text position="-1 2 -3" value="Seu tempo:" color="#FFF" align="center"></a-text>
+                <a-text position="0 2 -3" id="minha-pontuacao" value="34.590" color="#FFF" align="center"></a-text>
+                <a-text position="0.4 2 -3"value="segundos" color="#FFF"></a-text>
+
+                <a-text position="-0.85 1.5 -3" value="Quantidade de acertos:" color="#FFF" align="center"></a-text>
+                <a-text position="0.56 1.5 -3" id="acertos" value="100" color="#FFF" align="center"></a-text>
+                <a-text position="1.2 1.5 -3" value="cliques" color="#FFF" align="center"></a-text>
+
+                <a-entity geometry="primitive: plane; width: 2; height: 0.5;" material="color: #FFF" position="0 -1 -7" onclick="goToHome()">
+                    <a-text value="REINICIAR" align="center" position="0 0 0" color="#000"></a-text>
                 </a-entity>
-                <a-entity id="countdown" position="0 1.6 -4"></a-entity>
             </a-entity>
             
             <a-entity id="cursor" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
-            <a-entity laser-controls="hand: right"></a-entity>
+            <a-entity laser-controls="hand: right" raycaster="objects: [geometry]"></a-entity>
+            <a-entity laser-controls="hand: left" raycaster="objects: [geometry]"></a-entity>
         </a-scene>
 
         <audio id="backgroundMusic" src="./img/music.mp4"></audio>
 
+        <!-- Navegação entre telas -->
         <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Espera que a página seja totalmente carregada
+                setTimeout(function() {
+                    // Verifica se a API WebXR está disponível no navegador
+                    if (document.xr) {
+                        // Entra no modo VR
+                        document.xr.enterVR();
+                    }
+                }, 1000); // Aguarda 1 segundo após o carregamento da página para garantir que todos os elementos estejam disponíveis
+            });
+
             const home = document.getElementById('home')
             const validation = document.getElementById('validation')
             const rules = document.getElementById('rules')
             const game = document.getElementById('game')
+            const gameover = document.getElementById('gameover')
+
+            function goToHome() {
+                window.location.reload()
+                localStorage.removeItem('minha-pontuacao')
+                localStorage.removeItem('acertos')
+            }
 
             function goToValidation() {
                 home.setAttribute('position', '-1000 0 0')
@@ -141,9 +182,18 @@
                         .then(data => {
                             if (data.status !== 'success') {
                                 typedText.setAttribute('value', '')
-                                alert('Usuário não cadastrado. Revise o número informado')
+                                const msgerror = document.getElementById('msgerror')
+                                const msgerrorbox = document.getElementById('msgerrorbox')
+                                msgerrorbox.setAttribute('position', '0 1.6 -5')
+                                msgerror.setAttribute('value', 'Usuario sem cadastro. Revise o numero digitado')
+
+                                setTimeout(() => {
+                                    msgerrorbox.setAttribute('position', '0 -1000 0')
+                                }, 5 * 1000)
+
 
                             } else {
+                                typedText.setAttribute('value', '')
                                 validation.setAttribute('position', '-2000 0 0')
                                 rules.setAttribute('position', '0 0 0')
                             }
@@ -162,29 +212,21 @@
                 // Chama a função para iniciar a contagem regressiva
                 startCountdown()
             }
-        </script>
 
-        <!-- Number Pad - Validation -->
-        <script>
-            function handleKeyClick(key) {
-                const numberKey = key
-                const child = key.querySelector("a-text")
-                const value = child.getAttribute('value')
+            function goToGameover() {
+                game.setAttribute('position', '-4000 0 0')
+                gameover.setAttribute('position', '0 0 0')
+                const pontuacao = window.localStorage.getItem("minha-pontuacao")
+                const spanPontuacao = document.getElementById('minha-pontuacao')
+                spanPontuacao.setAttribute('value', pontuacao)
 
-                const typedText = document.getElementById('typedText')
-                let valueTypedText = typedText.getAttribute('value')
+                const acertos = window.localStorage.getItem("acertos")
+                const spanAcertos = document.getElementById('acertos')
+                spanAcertos.setAttribute('value', acertos)
 
-                if (value === "LIMPAR") {
-                    typedText.setAttribute('value', "")
-                } else if (value === "APAGAR") {
-                    if (valueTypedText.length > 0) {
-                        valueTypedText = valueTypedText.slice(0, -1)
-                        typedText.setAttribute('value', `${valueTypedText}`)
-                    }
-                } else {
-                    typedText.setAttribute('value', `${valueTypedText ? valueTypedText : ""}${value}`)
-                }
-
+                setTimeout(() => {
+                    goToHome()
+                }, 15 * 1000)
             }
         </script>
 
@@ -192,21 +234,21 @@
         <script>
             function startCountdown() {
                 var countdownElement = document.getElementById("countdown")
-                var count = 3 // Inicia a contagem regressiva em 3
+                var count = 5 // Inicia a contagem regressiva em 5
             
                 // Função que atualiza o elemento de contagem regressiva
                 function updateCountdown() {
-                countdownElement.textContent = count
-                count--
-            
-                if (count < 0) {
-                    // Quando a contagem regressiva chegar a zero, inicia o jogo
-                    countdownElement.style.display = "none"
-                    startGame()
-                } else {
-                    // Aguarda 1 segundo e atualiza a contagem regressiva
-                    setTimeout(updateCountdown, 1000)
-                }
+                    countdownElement.setAttribute('value', count)
+                    count--
+                
+                    if (count < 0) {
+                        // Quando a contagem regressiva chegar a zero, inicia o jogo
+                        countdownElement.setAttribute('position', '-2000 0 0')
+                        startGame()
+                    } else {
+                        // Aguarda 1 segundo e atualiza a contagem regressiva
+                        setTimeout(updateCountdown, 1000)
+                    }
                 }
             
                 // Inicia a atualização da contagem regressiva
@@ -223,42 +265,25 @@
                 const tempoElemento = document.getElementById("tempo")
                 
                 function iniciarTimer() {
-                        tempoInicio = Date.now()
-                        cronometro = setInterval(atualizarTempo, 1)
-                        audio.play()
+                    tempoInicio = Date.now()
+                    cronometro = setInterval(atualizarTempo, 1)
+                    audio.play()
                 }
                 
                 function atualizarTempo() {
                     const agora = Date.now()
                     tempoDecorrido = (agora - tempoInicio) / 1000
                     localStorage.setItem("minha-pontuacao", tempoDecorrido.toFixed(3))
-                    tempoElemento.textContent = tempoDecorrido.toFixed(3)
+                    tempoElemento.setAttribute('value', tempoDecorrido.toFixed(3))
                 }
 
                 iniciarTimer()
                 
-                const bot = new Image()
-                bot.src = 'img/v-razor.png'
-                bot.style.width = '10%'
-                bot.style.position = 'absolute'
-                bot.id = 'bot'
-
-                function tamanhoTela() {
-                    return {
-                        altura: window.innerHeight,
-                        largura: window.innerWidth
-                    }
-                }
+                // const bot = new Image()
+                // bot.src = 'img/v-razor.png'
+                // bot.id = 'bot'
 
                 function posicaoAleatoria() {
-                    //const botWidth = tamanhoTela().largura * 0.2
-                    //const botHeight = tamanhoTela().altura * 0.2
-                    //const maxX = tamanhoTela().largura - botWidth
-                    //const maxY = tamanhoTela().altura - botHeight
-                    //return {
-                        //posicaoX: Math.floor(Math.random() * maxX),
-                        //posicaoY: Math.floor(Math.random() * maxY)
-                    //}
                     return {
                         posicaoX: Math.random() * (8 - -8) + -8,
                         posicaoY: Math.random() * (5 - -5) + -5,
@@ -271,33 +296,34 @@
                 function adicionarBot() {
                     const { posicaoX, posicaoY, posicaoZ } = posicaoAleatoria()
                     const novoBot = document.createElement('a-image')
-                    novoBot.setAttribute('src', 'img/v-razor.png')
+                    novoBot.setAttribute('src', '#vrazor')
                     novoBot.setAttribute('width', '2')
                     novoBot.setAttribute('height', '2')
-                    novoBot.setAttribute('position', `${posicaoX} ${posicaoY} ${posicaoZ+ -8}`)
+                    novoBot.setAttribute('position', `${posicaoX} ${posicaoY} ${posicaoZ+ -10}`)
                     novoBot.setAttribute('id', 'bot')
                     novoBot.setAttribute('class', 'clickable')
                     novoBot.setAttribute('cursor-listener', true)
+                    novoBot.setAttribute('opacity', "0.99")
 
                     novoBot.addEventListener('mouseenter', function () {
                         this.parentNode.removeChild(this)
                         botsClicados++
                         if (botsClicados >= 100) {
-                        clearInterval(intervalId)
-                        clearInterval(cronometro)
-            
-                        audio.pause()
-            
-                        botsClicados = 100
-                        const qtyAcertos = botsClicados
-                        localStorage.setItem("acertos", qtyAcertos)
-            
-                        let xmlhttp = new XMLHttpRequest()
-                        xmlhttp.open("GET", `salvar-pontuacao?pontuacaoAtual=${localStorage.getItem("minha-pontuacao")}`, true)
-                        xmlhttp.send()
-                        window.location.href = "gameover"
+                            clearInterval(intervalId)
+                            clearInterval(cronometro)
+                
+                            audio.pause()
+                
+                            botsClicados = 100
+                            const qtyAcertos = botsClicados
+                            localStorage.setItem("acertos", qtyAcertos)
+                
+                            let xmlhttp = new XMLHttpRequest()
+                            xmlhttp.open("GET", `salvar-pontuacao?pontuacaoAtual=${localStorage.getItem("minha-pontuacao")}`, true)
+                            xmlhttp.send()
+                            goToGameover()
                         } else {
-                        adicionarBot()
+                            botsClicados >= 97 ? null : adicionarBot()
                         }
                     })
 
@@ -333,7 +359,7 @@
                             xmlhttp.open("GET", `salvar-pontuacao?pontuacaoAtual=${minhaPontuacao}`, true)
                             xmlhttp.send()
 
-                            window.location.href = "gameover"
+                            goToGameover()
                         }
                     }, 1000)
 
@@ -352,12 +378,56 @@
                         xmlhttp.open("GET", `salvar-pontuacao?pontuacaoAtual=${minhaPontuacao}`, true)
                         xmlhttp.send()
 
-                        window.location.href = "gameover"
+                        goToGameover()
                     }, 60 * 1000)
                 }
 
                 iniciarJogo()
             }
         </script>
+
+        <!-- Number Pad - Validation -->
+        <script>
+            function handleKeyClick(key) {
+                const numberKey = key
+                const child = key.querySelector("a-text")
+                const value = child.getAttribute('value')
+
+                const typedText = document.getElementById('typedText')
+                let valueTypedText = typedText.getAttribute('value')
+
+                if (value === "LIMPAR") {
+                    typedText.setAttribute('value', "")
+                } else if (value === "APAGAR") {
+                    if (valueTypedText.length > 0) {
+                        valueTypedText = valueTypedText.slice(0, -1)
+                        typedText.setAttribute('value', `${valueTypedText}`)
+                    }
+                } else {
+                    typedText.setAttribute('value', `${valueTypedText ? valueTypedText : ""}${value}`)
+                }
+
+            }
+        </script>
+
+        <!-- <script>
+            // Endereço do websocket
+            const ws = new WebSocket('ws://localhost:8080')
+
+            // Realizar a conexão com websocket
+            ws.onopen = (e) => {
+                console.log('Conectado!')
+
+            }
+
+            // Receber a mensagem do WebSocket
+            ws.onmessage = (mensagemRecebida) => {
+                // Ler as mensagem enviada pelo WebSocket
+                let resultado = JSON.parse(mensagemRecebida.data)
+                console.log(resultado)
+
+            }
+
+        </script> -->
     </body>
 </html>
