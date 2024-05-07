@@ -6,10 +6,12 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <title>Desafio Panasonic V-Razor</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <title>Desafio Panasonic V-Razor</title>
+
         <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+        <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
     </head>
     <body id="main-content">
         <a-scene>
@@ -18,9 +20,11 @@
                 <img id="skyTexture" src="img/bg-main.webp">
                 <img id="logotipo" src="img/logo-desafio.png">
                 <img id="vrazor" src="img/v-razor.png">
+                <img id="blur" src="img/fundo-com-desfoque.png">
+                <img id="gif" autoplay loop="true" src="img/v-razor.gif">
             </a-assets>
 
-            <a-entity id="home" visible="true" postion="0 0 0">
+            <a-entity id="home" position="0 0 0">
                 <a-plane id="logoPlane" src="#logotipo" position="0 2 -7" opacity="0.99" width="5.8" height="3.3"></a-plane>
 
                 <a-entity geometry="primitive: plane; width: 2; height: 0.5" material="color: #FFF" position="0 -1 -7" cursor-listener onclick="goToValidation()">
@@ -99,8 +103,27 @@
             </a-entity>
 
             <a-entity id="rules" position="2000 0 0">
-                <a-entity geometry="primitive: plane; width: 2; height: 0.5;" material="color: #FFF" position="0 -1 -7" onclick="goToGame()">
-                    <a-text value="VAMOS LA!" align="center" position="0 0 0" color="#000"></a-text>
+                <a-plane src="#blur" position="-8 1.6 -8" rotation="-15 25 0" width="6" height="8">
+                    <a-text value="REGRAS" font="https://cdn.aframe.io/fonts/Aileron-Semibold.fnt" align="left" position="-2.5 3 0.1" scale="3 3 0" color="#FFF"></a-text>
+                    <a-entity geometry="primitive: plane; width: 2; height: 1.5;" material="color: #FFD" position="-1.4 1.3 0.2">
+                        <a-text value="TEMPO" font="https://cdn.aframe.io/fonts/Aileron-Semibold.fnt" align="center" position="0 0.3 0.1" color="#000" scale="1.5 1.5 0"></a-text>
+                        <a-text value="60 segundos" font="https://cdn.aframe.io/fonts/Aileron-Semibold.fnt" align="center" position="0 -0.3 0.1" color="#000"></a-text>
+                    </a-entity>
+                    <a-entity geometry="primitive: plane; width: 2; height: 1.5;" material="color: #FFD" position="1.4 1.3 0.2">
+                        <a-text value="V-RAZOR" font="https://cdn.aframe.io/fonts/Aileron-Semibold.fnt" align="center" position="0 0.3 0.1" color="#000" scale="1.5 1.5 0"></a-text>
+                        <a-text value="150 cliques" font="https://cdn.aframe.io/fonts/Aileron-Semibold.fnt" align="center" position="0 -0.3 0.1" color="#000"></a-text>
+                    </a-entity>
+                    <a-text value="COMO JOGAR:" font="https://cdn.aframe.io/fonts/Aileron-Semibold.fnt" align="left" position="-2.4 -0.3 0.3" scale="3 3 0" color="#FFF"></a-text>
+                    <a-plane width="4" height="3" src="#blur" position="0 0 .1">
+                        <a-text value="Clique em todos os V-Razors;" font="https://cdn.aframe.io/fonts/Aileron-Semibold.fnt" align="left" position="-2.35 -1.3 0.1" color="#FFF" scale="1.5 1.5 0"></a-text>
+                        <a-text value="Conclua o desafio no menor tempo" font="https://cdn.aframe.io/fonts/Aileron-Semibold.fnt" align="left" position="-2.35 -2 0.1" color="#FFF" scale="1.5 1.5 0"></a-text>
+                        <a-text value="que conseguir;" font="https://cdn.aframe.io/fonts/Aileron-Semibold.fnt" align="left" position="-2.35 -2.3 0.1" color="#FFF" scale="1.5 1.5 0"></a-text>
+                        <a-text value="Passe o laser em cima do V-Razor." font="https://cdn.aframe.io/fonts/Aileron-Semibold.fnt" align="left" position="-2.35 -3 0.1" color="#FFF" scale="1.5 1.5 0"></a-text>
+                    </a-plane>
+                </a-plane>
+                <a-video  src="#gif" width="10" height="10" rotation="0 -15 0" position="7 0 -10"></a-video>
+                <a-entity geometry="primitive: plane; width: 2; height: 0.5;" material="color: #FFF" position="0 -2 -7" onclick="goToGame()">
+                    <a-text value="VAMOS LA!" font="https://cdn.aframe.io/fonts/Aileron-Semibold.fnt" align="center" position="0 0 0" color="#000"></a-text>
                 </a-entity>
             </a-entity>
 
@@ -139,17 +162,6 @@
 
         <!-- Navegação entre telas -->
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                // Espera que a página seja totalmente carregada
-                setTimeout(function() {
-                    // Verifica se a API WebXR está disponível no navegador
-                    if (document.xr) {
-                        // Entra no modo VR
-                        document.xr.enterVR();
-                    }
-                }, 1000); // Aguarda 1 segundo após o carregamento da página para garantir que todos os elementos estejam disponíveis
-            });
-
             const home = document.getElementById('home')
             const validation = document.getElementById('validation')
             const rules = document.getElementById('rules')
@@ -278,16 +290,12 @@
                 }
 
                 iniciarTimer()
-                
-                // const bot = new Image()
-                // bot.src = 'img/v-razor.png'
-                // bot.id = 'bot'
 
                 function posicaoAleatoria() {
                     return {
-                        posicaoX: Math.random() * (8 - -8) + -8,
-                        posicaoY: Math.random() * (5 - -5) + -5,
-                        posicaoZ: Math.random() * (2 - -2) + -2
+                        posicaoX: Math.random() * (12 - -12) + -12,
+                        posicaoY: Math.random() * (10 - -10) + -10,
+                        posicaoZ: Math.random() * (3 - -3) + -3
                     }
                 }
 
@@ -308,13 +316,14 @@
                     novoBot.addEventListener('mouseenter', function () {
                         this.parentNode.removeChild(this)
                         botsClicados++
-                        if (botsClicados >= 100) {
+
+                        if (botsClicados >= 150) {
                             clearInterval(intervalId)
                             clearInterval(cronometro)
                 
                             audio.pause()
                 
-                            botsClicados = 100
+                            botsClicados = 150
                             const qtyAcertos = botsClicados
                             localStorage.setItem("acertos", qtyAcertos)
                 
@@ -323,7 +332,7 @@
                             xmlhttp.send()
                             goToGameover()
                         } else {
-                            botsClicados >= 97 ? null : adicionarBot()
+                            botsClicados >= 147 ? null : adicionarBot()
                         }
                     })
 
@@ -409,25 +418,5 @@
 
             }
         </script>
-
-        <!-- <script>
-            // Endereço do websocket
-            const ws = new WebSocket('ws://localhost:8080')
-
-            // Realizar a conexão com websocket
-            ws.onopen = (e) => {
-                console.log('Conectado!')
-
-            }
-
-            // Receber a mensagem do WebSocket
-            ws.onmessage = (mensagemRecebida) => {
-                // Ler as mensagem enviada pelo WebSocket
-                let resultado = JSON.parse(mensagemRecebida.data)
-                console.log(resultado)
-
-            }
-
-        </script> -->
     </body>
 </html>
