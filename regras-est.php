@@ -36,7 +36,7 @@
                         Passe o laser em cima do V-Razor.
                     </li>
                 </ul>
-                <p style="font-size: 14px">ATENÇÂO: Este jogo pode causar enjoo e náuseas. Não recomendado para gestantes, crianças menores de 13 anos ou pessoas com epilepsia fotossensível</p>
+                <p style="font-size: 14px">ATENÇÃO: Este jogo pode causar enjoo e náuseas. Não recomendado para gestantes, crianças menores de 13 anos ou pessoas com epilepsia fotossensível.</p>
             </div>
         </div>
         <img src="./img/logo-desafio.png" width="30%" style="margin-top: 50px" alt="">
