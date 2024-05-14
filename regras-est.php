@@ -27,16 +27,16 @@
                 <h1 style="width: 100%; text-align: left; font-size: 4rem">Como jogar:</h1>
                 <ul>
                     <li>
-                        Clique em todos os V-Razors;
+                        Colete todos os V-Razors;
                     </li>
                     <li>
-                        Conclua o desafio no menor tempo que cosneguir;
+                        Passe o laser em cima dos produtos.
                     </li>
                     <li>
-                        Passe o laser em cima do V-Razor.
+                        Conclua o desafio no menor tempo que conseguir;
                     </li>
                 </ul>
-                <p style="font-size: 14px">ATENÇÃO: Este jogo pode causar enjoo e náuseas. Não recomendado para gestantes, crianças menores de 13 anos ou pessoas com epilepsia fotossensível.</p>
+                <p style="font-size: 14px; color: #F00; text-align: justify">ATENÇÃO: Este jogo pode causar enjoo e náuseas. Não recomendado para gestantes, crianças menores de 13 anos ou pessoas com epilepsia fotossensível.</p>
             </div>
         </div>
         <img src="./img/logo-desafio.png" width="30%" style="margin-top: 50px" alt="">
