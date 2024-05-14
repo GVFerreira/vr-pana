@@ -21,7 +21,7 @@
                     </div>
                     <div>
                         <h2>V-Razor</h2>
-                        <p>100 cliques</p>
+                        <p>150 cliques</p>
                     </div>
                 </div>
                 <h1 style="width: 100%; text-align: left; font-size: 4rem">Como jogar:</h1>
@@ -30,12 +30,13 @@
                         Clique em todos os V-Razors;
                     </li>
                     <li>
-                        Faça o desafio no menor tempo que conseguir;
+                        Conclua o desafio no menor tempo que cosneguir;
                     </li>
                     <li>
-                        Clique apenas com a ponta dos dedos.
+                        Passe o laser em cima do V-Razor.
                     </li>
                 </ul>
+                <p style="font-size: 14px">ATENÇÂO: Este jogo pode causar enjoo e náuseas. Não recomendado para gestantes, crianças menores de 13 anos ou pessoas com epilepsia fotossensível</p>
             </div>
         </div>
         <img src="./img/logo-desafio.png" width="30%" style="margin-top: 50px" alt="">
