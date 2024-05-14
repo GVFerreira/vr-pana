@@ -11,8 +11,8 @@
         <div id="container-regras">
             <div id="box-lista">
                 <h1 style="font-size: 2rem; text-align: center">cadastre-se</h1>
-                <div style="width: 100%; display: flex; justify-content: center">
-                    <img src="./img/qr-code.png" alt="QR Code" width="40%">
+                <div style="width: 100%; display: flex; justify-content: center;">
+                    <img style="border: 20px solid #FFF; border-radius: 10px" src="./img/qr-code.png" alt="QR Code" width="40%">
                 </div>
                 <div class="regras">
                     <div>
@@ -30,13 +30,13 @@
                         Colete todos os V-Razors;
                     </li>
                     <li>
-                        Passe o laser em cima dos produtos.
+                        Passe o laser em cima dos produtos;
                     </li>
                     <li>
-                        Conclua o desafio no menor tempo que conseguir;
+                        Conclua o desafio no menor tempo que conseguir.
                     </li>
                 </ul>
-                <p style="font-size: 14px; color: #F00; text-align: justify">ATENÇÃO: Este jogo pode causar enjoo e náuseas. Não recomendado para gestantes, crianças menores de 13 anos ou pessoas com epilepsia fotossensível.</p>
+                <p style="font-size: 14px; color: #BBB; text-align: justify">ATENÇÃO: Este jogo pode causar enjoo e náuseas. Não recomendado para gestantes, crianças menores de 13 anos ou pessoas com epilepsia fotossensível.</p>
             </div>
         </div>
         <img src="./img/logo-desafio.png" width="30%" style="margin-top: 50px" alt="">
