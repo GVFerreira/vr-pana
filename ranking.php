@@ -260,10 +260,10 @@
                     // Definir a variável para true para evitar atualizações futuras
                     paginaAtualizada = true;
 
-                    // Redirecionar para a página novamente após 5 segundos (5000 milissegundos)
+                    // Redirecionar para a página novamente após 10 segundos (10000 milissegundos)
                     setTimeout(function() {
                         location.reload();
-                    }, 3000); // 5 segundos
+                    }, 10 * 1000); // 10 segundos
                 }
             })
         </script>
