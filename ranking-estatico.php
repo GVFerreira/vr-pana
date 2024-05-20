@@ -13,20 +13,20 @@
                 <h1>ganhadores</h1>
                 <div class="prisegter">
                     <div class="seg">
-                        <h3>BELARMINO LIRA</h3>
-                        <h3>Tempo: 18.157 <span style="text-transform: lowercase">s</span></h3>
+                        <h3>JOAQUIM NETO</h3>
+                        <h3>Tempo: 30.008 <span style="text-transform: lowercase">s</span></h3>
                         <img src="./img/silver.webp" class="stage-podium" alt="">
                     </div>
                     
                     <div class="pri">
-                        <h3>ARTUR LIRA</h3>
-                        <h3>Tempo: 17.533 <span style="text-transform: lowercase">s</span></h3>
+                        <h3>LUIZ MORAES</h3>
+                        <h3>Tempo: 29.068 <span style="text-transform: lowercase">s</span></h3>
                         <img src="./img/gold.webp" class="stage-podium" alt="">
                     </div>
 
                     <div class="ter">
-                        <h3>JOÃO FERREIRA</h3>
-                        <h3>Tempo: 18.283 <span style="text-transform: lowercase">s</span></h3>
+                        <h3>JUAN HENRY</h3>
+                        <h3>Tempo: 31.145 <span style="text-transform: lowercase">s</span></h3>
                         <img src="./img/bronze.webp" class="stage-podium" alt="">
                     </div>
                     
